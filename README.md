@@ -103,14 +103,22 @@ CMD ["node", "src/server.js"]   # command run when the container starts
    docker rm docker-poc     # remove the container
    ```
 
-### Optional: use the image from a registry
+### Use the published image (Docker Hub)
 
-If the image is published to Docker Hub (replace `<user>`):
+The image is published at <https://hub.docker.com/r/jeyby99/docker-poc>. You do not need the source code, only Docker:
 
 ```bash
+docker run --rm -p 8080:80 jeyby99/docker-poc:1.0
+```
+
+Then open <http://localhost:8080>. (`--rm` deletes the container when it stops.)
+
+To publish your own copy:
+
+```bash
+docker login
 docker tag docker-poc <user>/docker-poc:1.0
 docker push <user>/docker-poc:1.0
-docker run --rm -p 8080:80 <user>/docker-poc:1.0
 ```
 
 ## References
