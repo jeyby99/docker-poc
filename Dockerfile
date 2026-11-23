@@ -9,7 +9,7 @@ COPY package.json ./
 COPY src ./src
 
 # The app listens on this port (documentation only; use -p to publish it)
-EXPOSE 3000
+EXPOSE 80
 
 # Run as the unprivileged "node" user instead of root
 USER node

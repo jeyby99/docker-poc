@@ -6,4 +6,4 @@ http
     res.writeHead(200, { "Content-Type": "text/plain" });
     res.end("Hello, World! (from inside a Docker container)\n");
   })
-  .listen(3000, () => console.log("Listening on port 3000"));
+  .listen(80, () => console.log("Listening on port 80"));

@@ -68,7 +68,7 @@ FROM node:22-alpine        # base image: Node.js on a small Linux
 WORKDIR /app               # working directory inside the container
 COPY package.json ./       # copy files into the image
 COPY src ./src
-EXPOSE 3000                # the app listens on port 3000
+EXPOSE 80                  # the app listens on port 80
 USER node                  # do not run as root
 CMD ["node", "src/server.js"]   # command run when the container starts
 ```
@@ -85,13 +85,13 @@ CMD ["node", "src/server.js"]   # command run when the container starts
    docker build -t docker-poc .
    ```
 
-2. Run a **container** from the image (maps port 3000 of the container to port 3000 of your machine):
+2. Run a **container** from the image (maps port 80 of the container to port 8080 of your machine):
 
    ```bash
-   docker run -d --name docker-poc -p 3000:3000 docker-poc
+   docker run -d --name docker-poc -p 8080:80 docker-poc
    ```
 
-3. Open <http://localhost:3000>. You should see *"Hello, World! (from inside a Docker container)"*.
+3. Open <http://localhost:8080>. You should see *"Hello, World! (from inside a Docker container)"*.
 
 4. Useful commands:
 
@@ -110,7 +110,7 @@ If the image is published to Docker Hub (replace `<user>`):
 ```bash
 docker tag docker-poc <user>/docker-poc:1.0
 docker push <user>/docker-poc:1.0
-docker run -p 3000:3000 <user>/docker-poc:1.0
+docker run --rm -p 8080:80 <user>/docker-poc:1.0
 ```
 
 ## References
