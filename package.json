@@ -1,0 +1,10 @@
+{
+  "name": "docker-poc",
+  "version": "1.0.0",
+  "description": "Hello World web server running in Docker",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "license": "MIT"
+}
