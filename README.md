@@ -61,6 +61,15 @@ docker-poc/
     └── server.js     # the web server
 ```
 
+### What is a Dockerfile?
+
+A Dockerfile is a text file with step-by-step instructions to package our app or service.
+
+- It is not code that runs directly. It is a set of steps that Docker follows when you run `docker build`.
+- It is named `Dockerfile` (no extension).
+- Each line is an instruction that creates a layer in the final artifact (the image).
+- A Dockerfile does not change at runtime. It is a static file that can be versioned in Git.
+
 ### The Dockerfile explained
 
 ```dockerfile
