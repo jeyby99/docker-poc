@@ -70,6 +70,14 @@ A Dockerfile is a text file with step-by-step instructions to package our app or
 - Each line is an instruction that creates a layer in the final artifact (the image).
 - A Dockerfile does not change at runtime. It is a static file that can be versioned in Git.
 
+### What is a Docker image?
+
+A Docker image is the result of `docker build`.
+
+- It is immutable and read-only. Once created, it does not change.
+- Images are made of layers. Each instruction in the Dockerfile creates a layer.
+- Layers are reusable and shared. If two images have a layer in common, they share that layer on disk.
+
 ### The Dockerfile explained
 
 ```dockerfile
