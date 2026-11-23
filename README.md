@@ -40,11 +40,21 @@ The **Docker Engine** is made of the `dockerd` daemon (does the work), a REST AP
 - **Cloud deployment**: AWS ECS/EC2, Google Cloud Run, Azure Container Apps and Kubernetes all run containers.
 - **Testing and demos**: start a database or a service in seconds and throw it away afterwards.
 
-## 4. Who created it and who uses it?
+## 4. Who created it and who implements it?
 
 - **Creator**: Solomon Hykes, founder of the company **dotCloud** (later renamed Docker, Inc.). It was first presented in March 2013 at PyCon and released as open source. It is written in Go and builds on Linux Containers (LXC) and later its own library, `libcontainer`/`runc`.
 - **Standardization**: in 2015 Docker donated the container format to the Open Container Initiative (OCI), under the Linux Foundation, so images work across different tools.
 - **Who uses it**: it is used across the industry, including companies such as Spotify, PayPal, Netflix, Uber, Google and Amazon, and it is the base of container platforms like Kubernetes and AWS ECS.
+
+**Where it is implemented (examples):**
+
+| Who | How they implement it |
+|---|---|
+| **Netflix, Spotify, PayPal, Uber** | Microservices packaged and deployed as containers. |
+| **Google, Amazon, Microsoft** | Container services in their clouds: Google Kubernetes Engine, AWS ECS/Fargate, Azure Container Apps. |
+| **Kubernetes** | The most popular orchestrator; it runs containers (OCI images) at scale. |
+| **CI/CD tools** | GitHub Actions, GitLab CI and Jenkins run builds and tests inside containers. |
+| **Development teams** | Docker Compose and Dev Containers give every developer the same environment. |
 
 ## 5. The POC
 
